@@ -10,11 +10,11 @@
 
 
 
-// function getHeaderDate() {
-//     var toDay = moment().format('dddd, MMMM Do YYYY');
-//     $("#currentDay").text(toDay);
-//     console.log(toDay);
-// }
+function getHeaderDate() {
+    var toDay = moment().format('dddd, MMMM Do YYYY');
+    $("#currentDay").text(toDay);
+    console.log(toDay);
+}
 
 var getThePlan = function(){
 var thePlan =  $('textarea#past').val();
