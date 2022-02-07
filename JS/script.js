@@ -10,13 +10,42 @@
 
 
 
-function getHeaderDate() {
-    var toDay = moment().format('dddd, MMMM Do YYYY');
-    $("#currentDay").text(toDay);
-    console.log(toDay);
-}
+// function getHeaderDate() {
+//     var toDay = moment().format('dddd, MMMM Do YYYY');
+//     $("#currentDay").text(toDay);
+//     console.log(toDay);
+// }
 
-getHeaderDate()
+var getThePlan = function(){
+var thePlan =  $('textarea#past').val();
+console.log(thePlan);
+
+
+}
+//localStorage.setItem("textarea",thePlan )
+
+
+    
+
+
+//  $("#saveBtn").click(function() {
+//     getThePlan()
+//  });
+     
+//         // Get nearby values of the description in JQuery
+//      var thePlan =  $('textarea#past').val();  
+     
+//     console.log(thePlan);
+//     });
+// };
+
+// getThePlan()
+    
+    // localStorage.setItem(comment);
+
+
+
+
 
 
 
