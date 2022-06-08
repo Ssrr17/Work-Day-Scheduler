@@ -29,7 +29,7 @@ Made by Salieu Sarr
 The project is open-source
 
 ## Screenshot
-
+[https://github.com/Ssrr17/Work-Day-Scheduler/blob/main/assets/screenshot%20(2).png]
 ## Tests:
 
 no testing needed
