@@ -1,53 +1,42 @@
-//get and display the current date
-//create blocks for business hours 
-//get user input info 
-//save info to local storage
-//make time loops for past, present and future
-//colour code time status
-//
+//get the current date for the header
+$("#toDay").text(moment().format("ddd MMMM Do YYYY"));
 
+// change event textarea background depending on state
+var updateState = function () {
+  var hour = moment().hours();
 
+  $(".time-block").each(function () {
+    var now = parseInt($(this).attr("id"));
 
+    if (now > hour) {
+      $(this).addClass("future");
+    } else if (now === hour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("past");
+    }
+  });
+};
 
+// save event data to local storage
+const saveBtn = $(".saveBtn");
+saveBtn.on("click", function () {
+  var time = $(this).siblings(".hour").text();
+  var task = $(this).siblings(".description").val();
+  localStorage.setItem(time, task);
+});
 
-function getHeaderDate() {
-    var toDay = moment().format('dddd, MMMM Do YYYY');
-    $("#currentDay").text(toDay);
-    console.log(toDay);
-}
+// add event persistence
+var taskPersist = function () {
+  $(".hour").each(function () {
+    var now = $(this).text();
+    var currentTask = localStorage.getItem(now);
 
-var getThePlan = function(){
-var thePlan =  $('textarea#past').val();
-console.log(thePlan);
+    if (currentTask !== null) {
+      $(this).siblings(".description").val(currentTask);
+    }
+  });
+};
 
-
-}
-//localStorage.setItem("textarea",thePlan )
-
-
-    
-
-
-//  $("#saveBtn").click(function() {
-//     getThePlan()
-//  });
-     
-//         // Get nearby values of the description in JQuery
-//      var thePlan =  $('textarea#past').val();  
-     
-//     console.log(thePlan);
-//     });
-// };
-
-// getThePlan()
-    
-    // localStorage.setItem(comment);
-
-
-
-
-
-
-
-
-
+updateState();
+taskPersist();
